@@ -1,7 +1,16 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "properties": {
-        "a": {"type": "string"}
-    }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+
+	"properties": {
+		"manifest_version": { "type": "number", "default": 2, "description": "This key specifies the version of manifest.json used by this extension.\n\nCurrently, this must always be 2.\n" },
+		"name": { "type": "string", "description": "Name of the extension. This is used to identify the extension in the browser's user interface and on sites like addons.mozilla.org.\n\nIt's good practice to keep the name short enough to display in the UI" },
+		"version": { "type": "string", "default": "1.0.0", "description": "Version of the extension, formatted as numbers and ASCII characters separated by dots." }
+	},
+
+	"required": [
+		"manifest_version",
+		"name",
+		"version"
+	]
 }
